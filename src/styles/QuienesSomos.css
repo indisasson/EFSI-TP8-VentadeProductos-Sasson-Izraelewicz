@@ -1,0 +1,26 @@
+.qs-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 208, 0.1);
+  }
+  
+  .qs-container h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #00ffd0;
+  }
+  
+  .qs-container h2 {
+    color: #00ffd0;
+    margin-top: 2rem;
+  }
+  
+  .qs-container p {
+    line-height: 1.6;
+    margin-top: 0.5rem;
+    color: #ccc;
+  }
+  
