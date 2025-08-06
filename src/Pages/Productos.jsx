@@ -9,19 +9,25 @@ const Productos = () => {
 
   useEffect(() => {
     const url = categoria
-      ? `https://dummyjson.com/products/category/${categoria}`
+      ? `https://dummyjson.com/products/category/${categoria.name}`
       : `https://dummyjson.com/products`;
     axios.get(url)
       .then(res => setProductos(res.data.products))
       .catch(err => console.error(err));
   }, [categoria]);
 
+
+
   return (
-    <section className="productos-grid">
-      {productos.map((prod) => (
-        <CardProducto key={prod.id} producto={prod} />
-      ))}
-    </section>
+    <>
+      <h1>Todos nuestros productos</h1>
+      <section className="productos-grid">
+        {productos.map((prod) => (
+          <CardProducto key={prod.id} producto={prod} />
+        ))}
+      </section>
+    </>
+    
   );
 };
 

@@ -1,0 +1,100 @@
+/* Contenedor general para centrar y limitar ancho */
+form {
+    max-width: 500px;
+    margin: 2rem auto;
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 208, 0.15);
+    color: #ccc;
+    font-family: Arial, sans-serif;
+    margin-left: 700px;
+  }
+  
+  /* Título */
+  h1 {
+    text-align: center;
+    color: #00ffd0;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    margin-left: 700px;
+  }
+  
+  /* Etiquetas de cada campo */
+  form p {
+    margin: 1rem 0 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #00ffd0;
+  }
+  
+  /* Inputs y textarea */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1.5px solid #00ffd0;
+    border-radius: 6px;
+    background-color: #121212;
+    color: #eee;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    resize: vertical; /* para textarea */
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  textarea:focus {
+    border-color: #00ffc0;
+    outline: none;
+  }
+  
+  /* Checkbox con label */
+  input[type="checkbox"] {
+    margin-right: 0.5rem;
+    transform: scale(1.2);
+    vertical-align: middle;
+  }
+  
+  /* Texto del checkbox alineado */
+  form input[type="checkbox"] + label {
+    color: #ccc;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  /* Botón */
+  button[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: 1.8rem;
+    padding: 0.75rem 0;
+    background-color: #00ffd0;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #00e0b5;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    form {
+      padding: 1.5rem 1rem;
+      margin: 1.5rem 1rem;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  }
+  

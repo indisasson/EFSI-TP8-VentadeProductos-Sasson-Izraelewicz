@@ -1,9 +1,11 @@
 .product-card {
-    background: #1e1e1e;
+    background: #5c5c5c;
     border-radius: 8px;
     padding: 1rem;
     text-align: center;
     box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    flex: 1 1 250px;
+    max-width: 300px;
   }
   .product-card img {
     max-width: 100%;
@@ -23,4 +25,21 @@
     color: #000;
     border-radius: 5px;
   }
+  .productos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  h1{
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #00ffd0;
+    text-align: center;
+  }
+  
+  
   

@@ -14,11 +14,11 @@ function App() {
   const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
-    axios.get("https://dummyjson.com/products/categories")
+    axios.get('https://dummyjson.com/products/categories')
       .then(res => setCategorias(res.data))
       .catch(err => console.error(err));
   }, []);
-
+  console.log("Categorías:", categorias);
   return (
     <HashRouter>
       <Routes>
