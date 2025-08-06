@@ -12,7 +12,7 @@ form {
   }
   
   /* Título */
-  h1 {
+.titulo {
     text-align: center;
     color: #00ffd0;
     margin-bottom: 2rem;

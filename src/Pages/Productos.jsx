@@ -8,26 +8,33 @@ const Productos = () => {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    const url = categoria
-      ? `https://dummyjson.com/products/category/${categoria.name}`
-      : `https://dummyjson.com/products`;
-    axios.get(url)
+    axios.get('https://dummyjson.com/products?limit=100')
       .then(res => setProductos(res.data.products))
       .catch(err => console.error(err));
-  }, [categoria]);
+  }, []);
 
+  // Comparamos todo en minúsculas para evitar errores por mayúsculas
+  const productosFiltrados = categoria
+    ? productos.filter(p => p.category.toLowerCase() === categoria.toLowerCase())
+    : productos;
 
+  const formatearCategoria = (cat) => {
+    if (!cat) return '';
+    return cat
+      .split('-')
+      .map(p => p.charAt(0).toUpperCase() + p.slice(1))
+      .join(' ');
+  };
 
   return (
     <>
-      <h1>Todos nuestros productos</h1>
+      <h1>{categoria ? `Productos en categoría: ${formatearCategoria(categoria)}` : 'Todos nuestros productos'}</h1>
       <section className="productos-grid">
-        {productos.map((prod) => (
+        {productosFiltrados.map(prod => (
           <CardProducto key={prod.id} producto={prod} />
         ))}
       </section>
     </>
-    
   );
 };
 

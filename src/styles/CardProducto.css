@@ -1,3 +1,12 @@
+
+h1{
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #00ffd0;
+  text-align: center;
+  margin: 0px;
+}
+
 .product-card {
     background: #5c5c5c;
     border-radius: 8px;
@@ -34,12 +43,6 @@
     padding: 2rem;
   }
 
-  h1{
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    color: #00ffd0;
-    text-align: center;
-  }
   
   
   

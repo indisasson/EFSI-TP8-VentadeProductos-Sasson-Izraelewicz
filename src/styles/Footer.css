@@ -1,8 +1,23 @@
 .footer {
-    background: #000;
-    color: #ccc;
-    padding: 1rem;
-    text-align: center;
-    font-size: 0.85rem;
+  background-color: #121212; /* Fondo oscuro elegante */
+  color: #00ffd0;            /* Color verde neón suave */
+  text-align: center;        /* Centrar el texto */
+  padding: 1rem 0;           /* Espacio arriba y abajo */
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  user-select: none;       
+  margin-left: 300px  /* Evita selección accidental */
+}
+
+.footer p {
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    font-size: 0.8rem;
+    padding: 0.8rem 0;
   }
-  
+}

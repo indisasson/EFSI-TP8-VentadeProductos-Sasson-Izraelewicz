@@ -1,0 +1,105 @@
+body {
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  text-align: center;
+  margin-left: 350px;
+}
+
+/* Título principal */
+.home-container h1 {
+  color: #00ffd0;
+  margin-top: 20px;
+  font-size: 2.5rem;
+  margin-left: 100px;
+}
+
+/* Descripción de bienvenida */
+.home-container p {
+  max-width: 800px;
+  margin: 10px auto 30px; /* CENTRADO AUTOMÁTICO */
+  line-height: 1.6;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+/* Slider imágenes */
+.slick-slide img {
+  max-height: 400px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  background: #000;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Título productos destacados */
+.home-container h3 {
+  color: #00ffd0;
+  margin-top: 40px;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Contenedor de cards */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Centrado vertical */
+  gap: 20px;
+  text-align: center;
+}
+
+/* Card individual */
+.celular-card {
+  background-color: rgb(27, 27, 27);
+  border-radius: 10px;
+  padding: 15px;
+  width: 260px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+.celular-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Imagen del producto */
+.celular-img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* Título del producto */
+.celular-card h4 {
+  margin: 10px 0 5px;
+  color: #00ffd0;
+  font-size: 1.1rem;
+}
+
+/* Descripción del producto */
+.celular-card p {
+  font-size: 0.95rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* Precio del producto */
+.celular-card strong {
+  font-size: 1.1rem;
+  color: #00ffd0;
+}
