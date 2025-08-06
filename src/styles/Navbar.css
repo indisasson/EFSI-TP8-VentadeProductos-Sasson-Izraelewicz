@@ -1,33 +1,197 @@
+/* Navbar base */
 .navbar {
-    background: #000;
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  background-color: #000;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center; /* centra todo horizontalmente */
+  box-shadow: 0 2px 10px rgba(0, 255, 192, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor links */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Logo */
+.navbar-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar-logo {
+  height: 44px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo-link:hover .navbar-logo,
+.navbar-logo-link:focus .navbar-logo {
+  transform: scale(1.1);
+  outline: none;
+}
+
+/* Links */
+.navbar-link {
+  color: #00ffc9;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover,
+.navbar-link:focus {
+  color: #00ffa2;
+  outline: none;
+}
+
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #00ffc9;
+  transition: width 0.3s ease;
+}
+
+.navbar-link:hover::after,
+.navbar-link:focus::after {
+  width: 100%;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  color: #00ffc9;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 0;
+  outline-offset: 4px;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown:focus-within {
+  outline: 2px solid #00ffc9;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Flecha */
+.arrow-down {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.dropdown:hover .arrow-down,
+.dropdown:focus-within .arrow-down {
+  transform: rotate(180deg);
+}
+
+/* Dropdown contenido */
+.dropdown-content {
+  position: absolute;
+  top: 125%;
+  left: 0;
+  background-color: #111;
+  border-radius: 8px;
+  padding: 0.75rem 0;
+  min-width: 160px;
+  box-shadow: 0 8px 20px rgba(0, 255, 192, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1500;
+  user-select: none;
+  overflow: hidden;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Scrollbar personalizada para dropdown */
+.dropdown-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+  background: #222;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+  background-color: #00ffc9;
+  border-radius: 3px;
+}
+
+/* Dropdown links */
+.dropdown-item {
+  padding: 10px 20px;
+  color: #00ffc9;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.25s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #00ffc94d;
+  color: #00ffa2;
+  outline: none;
+}
+
+/* Loading texto en dropdown */
+.dropdown-loading {
+  padding: 10px 20px;
+  color: #666;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1rem;
   }
   .navbar-left {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+    gap: 1.2rem;
   }
   .navbar-logo {
-    height: 40px;
+    height: 36px;
   }
-  .dropdown {
-    position: relative;
+  .navbar-link,
+  .dropdown-toggle {
+    font-size: 1rem;
   }
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #222;
-    padding: 0.5rem;
-    border-radius: 5px;
-    z-index: 10;
-    flex-direction: column;
-  }
-  .dropdown:hover .dropdown-content {
-    display: flex;
-  }
-  
+}

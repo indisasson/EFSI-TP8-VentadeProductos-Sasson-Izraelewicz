@@ -1,46 +1,108 @@
-
 .qs-container {
-  max-width: 1200px;
-  padding: 2.5rem;
-  background-color: rgba(87, 87, 87, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(105, 105, 105, 0.1);
-  text-align: center;
+  max-width: 900px;
+  margin: 2rem auto 4rem;
+  padding: 3rem 2rem;
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 255, 208, 0.3);
   color: #ccc;
-  margin-left: 320px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: left;
+}
+
+.qs-container h1,
+.qs-container h2 {
+  color: #00ffd0;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 700;
 }
 
 .qs-container h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: #00ffd0;
-  text-align: center;
+  font-size: 3rem;
 }
 
 .qs-container h2 {
-  font-size: 1.8rem;
-  color: #00ffd0;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  text-align: center;
+  font-size: 2rem;
+  margin-top: 3rem;
 }
 
-.qs-container p {
-  line-height: 1.8;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  color: #ccc;
-  font-size: 1.1rem;
-  text-align: justify;
-}
-
-.qs-mision,
-.qs-equipo {
-  margin-top: 2rem;
-}
-
+.qs-intro p,
 .qs-mision p,
 .qs-equipo p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
   text-align: justify;
+  color: #ddd;
 }
 
+.qs-image-container {
+  margin: 3rem auto;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.qs-image {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 208, 0.4);
+  object-fit: cover;
+}
+
+/* Valores */
+.qs-valores {
+  margin-top: 3rem;
+}
+
+.qs-valores ul {
+  list-style: none;
+  padding-left: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.qs-valores li {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #ddd;
+}
+
+.qs-valores li strong {
+  color: #00ffd0;
+}
+
+.qs-valores li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #00ffd0;
+  font-weight: 900;
+  font-size: 1.3rem;
+  top: 0;
+  line-height: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .qs-container {
+    padding: 2rem 1rem;
+    margin: 1rem;
+  }
+  .qs-container h1 {
+    font-size: 2.4rem;
+  }
+  .qs-container h2 {
+    font-size: 1.7rem;
+  }
+  .qs-image {
+    max-width: 100%;
+  }
+  .qs-valores ul {
+    max-width: 100%;
+  }
+}
