@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import CardProducto from "../components/CardProducto";
 
-const Productos = () => {
+const Productos = ({ carrito, setCarrito }) => {
   const { categoria } = useParams();
   const [productos, setProductos] = useState([]);
 
@@ -31,7 +31,7 @@ const Productos = () => {
       <h1>{categoria ? `Productos en categoría: ${formatearCategoria(categoria)}` : 'Todos nuestros productos'}</h1>
       <section className="productos-grid">
         {productosFiltrados.map(prod => (
-          <CardProducto key={prod.id} producto={prod} />
+          <CardProducto key={prod.id} producto={prod} setCarrito={setCarrito} carrito={carrito}/>
         ))}
       </section>
     </>

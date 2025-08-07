@@ -8,13 +8,24 @@ body {
   color: #d0fefe;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* evita scroll horizontal */
 }
 
-/* Contenedor principal */
+/* Contenedor principal a full ancho */
 .home-container {
+  width: 100vw;   /* Ocupa todo el ancho de la ventana */
+  padding: 2rem 0; /* Padding arriba y abajo para que respire */
+  background: linear-gradient(135deg, #001e22, #004d40); /* un fondo profesional */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center; /* centra contenido interno */
+}
+
+/* Contenedor interno para limitar ancho y centrar */
+.home-content {
+  width: 100%;
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 0 1rem;  /* margen interno horizontal */
   box-sizing: border-box;
 }
 
@@ -46,15 +57,11 @@ body {
 /* Slider */
 .slider-wrapper {
   margin-top: 3rem;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 14px;
   box-shadow: 0 12px 35px rgba(0, 255, 200, 0.3);
   overflow: hidden;
   background: linear-gradient(135deg, #001e22, #004d40);
 }
-
 .slick-slider {
   outline: none;
 }
@@ -71,7 +78,7 @@ body {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 0 8px #00ffc9cc);
+  filter: drop-shadow(0 0 8px #00ffd0);
   transition: transform 0.3s ease;
 }
 
@@ -91,25 +98,30 @@ body {
   margin-bottom: 2rem;
   text-align: center;
   letter-spacing: 1px;
-  text-shadow: 0 0 10px #00ffc9aa;
+  text-shadow: 0 0 10px #00ffd0;
 }
 
 /* Cards container */
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 320px)); /* columnas fijas de 320px */
+  gap: 80px;
+  justify-content: center; /* centra las cards horizontalmente */
+  align-items: start;
   padding-bottom: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
+
 
 /* Card individual */
 .producto-card {
+  width: 320px;       /* ancho fijo */
+  height: 460px;      /* altura fija, ajustar según contenido */
+  margin: 0;
   background: #111616;
   border-radius: 16px;
   padding: 1.75rem 1.5rem;
-  width: 100%;
-  max-width: 320px;
   box-shadow: 0 8px 20px rgba(0, 255, 200, 0.1);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   cursor: pointer;
@@ -118,39 +130,47 @@ body {
   align-items: center;
   text-align: center;
   outline: none;
+  overflow: hidden; /* para evitar que contenido salga del contenedor */
 }
 
 .producto-card:focus,
 .producto-card:hover {
-  box-shadow: 0 0 30px #00ffc9cc;
+  box-shadow: 0 0 30px #00ffd0;
   transform: translateY(-10px);
   outline: none;
 }
 
 .producto-img {
   width: 100%;
-  max-height: 220px;
+  height: 180px;         /* altura fija para imagen */
   border-radius: 14px;
   object-fit: contain;
   margin-bottom: 1rem;
-  filter: drop-shadow(0 0 6px #00ffc9bb);
+  filter: drop-shadow(0 0 6px #32cf40);
   transition: filter 0.3s ease;
 }
 
 .producto-card:hover .producto-img,
 .producto-card:focus .producto-img {
-  filter: drop-shadow(0 0 10px #00ffc9ee);
+  filter: drop-shadow(0 0 10px #32cf40);
 }
 
 .producto-info {
   width: 100%;
+  flex-grow: 1; /* que ocupe todo el espacio restante */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* separa título-descripción y precio */
 }
 
 .producto-title {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #00ffc9;
+  color: #00ffd0;
   margin-bottom: 0.5rem;
+  white-space: nowrap;       /* evita salto de línea */
+  overflow: hidden;
+  text-overflow: ellipsis;  /* pone "..." si es muy largo */
 }
 
 .producto-description {
@@ -158,20 +178,23 @@ body {
   line-height: 1.5;
   color: #a0f7ef;
   margin-bottom: 1rem;
-  min-height: 3.5rem; /* evita salto de altura variable */
   opacity: 0.85;
+  overflow: hidden;
+  display: -webkit-box;       /* para truncar texto */
+  -webkit-line-clamp: 3;      /* máximo 3 líneas */
+  -webkit-box-orient: vertical;
 }
 
 .producto-price {
   font-size: 1.3rem;
   font-weight: 800;
-  color: #00cc9f;
+  color: #00ffd0;
   letter-spacing: 0.03em;
 }
 
 /* Scrollbar para slider (opc) */
 .slick-dots li button:before {
-  color: #00ffc9;
+  color: #00ffd0;
   opacity: 0.7;
 }
 

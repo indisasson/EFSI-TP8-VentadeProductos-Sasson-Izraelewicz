@@ -1,5 +1,4 @@
 import "../styles/QuienesSomos.css";
-import teamPhoto from "../assets/team-photo.jpg"; // Pon una foto de equipo o relacionada en assets
 
 const QuienesSomos = () => {
   return (
@@ -34,13 +33,7 @@ const QuienesSomos = () => {
         </p>
       </div>
 
-      <div className="qs-image-container" aria-hidden="true">
-        <img
-          src={teamPhoto}
-          alt="Equipo de desarrollo trabajando en proyecto"
-          className="qs-image"
-        />
-      </div>
+    
 
       <div className="qs-valores" aria-labelledby="valores-title">
         <h2 id="valores-title">Nuestros valores</h2>

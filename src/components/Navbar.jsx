@@ -37,6 +37,8 @@ const Navbar = ({ categorias }) => {
         </div>
 
         <Link to="/contacto" className="navbar-link">Contacto</Link>
+        
+        <Link to="/carrito" className="navbar-link">🛒</Link>
       </nav>
     </header>
   );
